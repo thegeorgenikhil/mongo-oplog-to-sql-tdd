@@ -25,7 +25,6 @@ func GenerateInsertSQL(oplog string) (string, error) {
 
 	switch oplogObj.Op {
 	case "i":
-		//"INSERT INTO test.student (_id, name, roll_no, is_graduated, date_of_birth) VALUES ('635b79e231d82a8ab1de863b', 'Selena Miller', 51, false, '2000-01-30');"
 		sql := fmt.Sprintf("INSERT INTO %s", oplogObj.NS)
 
 		columnNames := make([]string, 0, len(oplogObj.O))
